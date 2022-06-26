@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { userRoutes } from "./routes/userRoutes";
+import SpinnerComponents from "./components/Spinner/SpinnerComponents";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SpinnerComponents />
+      <BrowserRouter>
+        <Switch>
+          {userRoutes.map((route, index) => {
+            if (route.isUseLayout) {
+              return (
+                <Route
+                  key={index}
+                  exact={route.exact}
+                  path={route.path}
+                  render={() => {
+                    return route.component;
+                  }}
+                ></Route>
+              );
+            }
+            return (
+              <Route
+                key={index}
+                exact={route.exact}
+                path={route.path}
+                component={route.component}
+              ></Route>
+            );
+          })}
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

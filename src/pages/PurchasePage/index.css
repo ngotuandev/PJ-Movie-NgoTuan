@@ -1,0 +1,141 @@
+/* btn purchase */
+.movies-purchase .btn-13,
+.movies-purchase .btn-13 *,
+.movies-purchase .btn-13 :after,
+.movies-purchase .btn-13 :before,
+.movies-purchase .btn-13:after,
+.movies-purchase .btn-13:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.movies-purchase .btn-13 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: rgb(202 138 4);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.movies-purchase .btn-13:-moz-focusring {
+  outline: auto;
+}
+
+.movies-purchase .btn-13 [hidden] {
+  display: none;
+}
+.movies-purchase .btn-13 {
+  overflow: hidden;
+  position: relative;
+}
+.movies-purchase .btn-13 span {
+  mix-blend-mode: hard-light;
+  position: relative;
+  z-index: 1;
+}
+.movies-purchase .btn-13:after,
+.movies-purchase .btn-13:before {
+  background: rgb(239 68 68);
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(var(--progress, 0%) / 2),
+    0 calc(var(--progress, 0%) / 2),
+    0 0,
+    0 calc(100% - var(--progress, 0%) / 2),
+    100% calc(100% - var(--progress, 0%) / 2),
+    100% 100%,
+    0 100%,
+    0 calc(100% - var(--progress, 0%) / 2)
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(var(--progress, 0%) / 2),
+    0 calc(var(--progress, 0%) / 2),
+    0 0,
+    0 calc(100% - var(--progress, 0%) / 2),
+    100% calc(100% - var(--progress, 0%) / 2),
+    100% 100%,
+    0 100%,
+    0 calc(100% - var(--progress, 0%) / 2)
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateX(calc(100% - var(--progress, 0%) / 1.99));
+  transition: transform 0.3s ease, -webkit-clip-path 0.3s ease;
+  transition: clip-path 0.3s ease, transform 0.3s ease;
+  transition: clip-path 0.3s ease, transform 0.3s ease,
+    -webkit-clip-path 0.3s ease;
+}
+.movies-purchase .btn-13:after {
+  transform: translateX(calc(-100% + var(--progress, 0%) / 1.99));
+}
+.movies-purchase .btn-13:hover {
+  --progress: 100%;
+}
+
+.info-movie-chairs .screen-movies {
+  border-bottom: 50px solid rgb(120 113 108);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  width: 100%;
+  filter: drop-shadow(4px 30px 20px rgb(255, 255, 255, 0.5));
+  color: #fff;
+}
+
+.tabs-check .ant-tabs-nav-wrap {
+  justify-content: center;
+}
+.tabs-check .ant-tabs-tab-active > div > button,
+.tabs-check .ant-tabs-tab:hover,
+.tabs-check .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: rgb(239 68 68);
+}
+.tabs-check .ant-tabs-ink-bar {
+  background: rgb(239 68 68);
+}
+
+.tabs-check .ant-tabs-tab {
+  padding: 0;
+}
+
+@media (max-width: 1280px) {
+  .movies-purchase {
+    flex-direction: column;
+  }
+  .movies-purchase > div:nth-child(2) {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 850px) {
+  .movies-purchase > div:nth-child(1) {
+    width: 666px !important;
+  }
+  .info-movie-chairs > div:nth-child(2) button {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+
+@media (max-width: 750px) {
+  .info-movie-chairs {
+    width: 666px;
+  }
+  .movies-purchase > div:nth-child(1) {
+    width: 550px !important;
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 650px) {
+  .movies-purchase > div:nth-child(1),
+  .movies-purchase > div:nth-child(2) {
+    width: 360px !important;
+  }
+  .movies-purchase > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    padding-bottom: 1rem !important ;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}

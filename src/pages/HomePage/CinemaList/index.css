@@ -1,0 +1,52 @@
+.tabs-cinema-list
+  .ant-tabs-left
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane,
+.tabs-cinema-list
+  .ant-tabs-left
+  > div
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane {
+  padding-left: 0;
+}
+
+.tabs-cinema-list .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+.tabs-cinema-list .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+.tabs-cinema-list .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+.tabs-cinema-list .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+  padding: 20px 24px 0 24px;
+  margin: 0;
+}
+
+.tabs-cinema-list .tabs-address .ant-tabs-nav-list {
+  width: 370px;
+  height: 700px;
+  overflow-y: scroll;
+}
+.tabs-cinema-list .ant-tabs-nav-operations {
+  display: none !important;
+}
+.text-shows-time:hover :nth-child(3) {
+  font-weight: 700;
+  color: rgb(239 68 68);
+}
+
+.text-shows-time:hover :nth-child(1) {
+  font-weight: 700;
+  color: rgb(22 163 74);
+}
+
+.tabs-cinema-list .ant-tabs-ink-bar {
+  background: rgb(22 163 74);
+}
+.tabs-cinema-list
+  .ant-tabs-tab.ant-tabs-tab-active
+  .ant-tabs-tab-btn
+  p:nth-child(2) {
+  color: rgb(239 68 68);
+}
+.tabs-address .ant-tabs-ink-bar {
+  display: none;
+}

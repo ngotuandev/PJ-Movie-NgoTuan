@@ -1,0 +1,4 @@
+.footer-home .logo-hover a:hover {
+  filter: grayscale(80);
+  transition-duration: 300ms;
+}

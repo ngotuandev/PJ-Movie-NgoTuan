@@ -1,0 +1,54 @@
+.link-logo:hover svg {
+  fill: #ef4444;
+}
+
+.link-logo:hover p {
+  color: #ef4444;
+}
+
+.menu-nav {
+  position: relative;
+}
+
+.menu-nav-overlay {
+  animation: fadeIn linear 0.3s;
+}
+
+.menu-navbar {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all linear 0.3s;
+}
+
+.menu__input-check:checked ~ .menu-nav-overlay {
+  display: block;
+}
+.menu__input-check:checked ~ .menu-navbar {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu-user-nav > div > div {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+.menu-user-nav > div > div > hr {
+  display: none;
+}
+
+.menu-user-nav > div > div > a {
+  padding-bottom: 1rem;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* @media (max-width:1280px){
+  
+} */

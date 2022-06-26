@@ -1,0 +1,90 @@
+.tabs-movie-news .ant-tabs-tab + .ant-tabs-tab {
+  margin: 0;
+}
+.tabs-movie-news .ant-tabs-nav-list .ant-tabs-tab {
+  padding: 12px 10px;
+  width: 170px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-movie-news .ant-tabs-tab:hover div {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.tabs-movie-news .ant-tabs-tab-active div {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(239 68 68) !important;
+}
+
+.tabs-movie-news .ant-tabs-ink-bar {
+  background: rgb(239 68 68);
+}
+
+.tabs-movie-news .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
+.tabs-movie-news .ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+  justify-content: center;
+}
+.tabs-movie-news .ant-tabs-top > .ant-tabs-nav::before,
+.tabs-movie-news .ant-tabs-bottom > .ant-tabs-nav::before,
+.tabs-movie-news .ant-tabs-top > div > .ant-tabs-nav::before,
+.tabs-movie-news .ant-tabs-bottom > div > .ant-tabs-nav::before {
+  position: unset;
+}
+
+/* Button aylen */
+
+.tabs-movie-news .button--aylen {
+  background: #fff;
+  color: #37474f;
+  overflow: hidden;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.tabs-movie-news .button--aylen {
+  background: none;
+  color: rgb(100 116 139);
+}
+.tabs-movie-news .button--aylen::before,
+.tabs-movie-news .button--aylen::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.tabs-movie-news .button--aylen::before {
+  background: rgb(248 113 113);
+}
+.tabs-movie-news .button--aylen::after {
+  background: rgb(239 68 68);
+}
+.tabs-movie-news .button--aylen:hover {
+  color: #fff;
+}
+.tabs-movie-news .button--aylen:hover::before,
+.tabs-movie-news .button--aylen:hover::after {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.tabs-movie-news .button--aylen:hover::after {
+  -webkit-transition-delay: 0.175s;
+  transition-delay: 0.175s;
+}
+
+@media (max-width: 600px) {
+  .tabs-movie-news .ant-tabs-nav-list .ant-tabs-tab {
+    width: 125px !important;
+  }
+}
