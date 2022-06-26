@@ -17,7 +17,6 @@ export default function AccountPage() {
   useEffect(() => {
     dispatch(getDataTicketHistoryService(userLogin.taiKhoan));
 
-    dispatch(getDataAccountUser(userLogin.taiKhoan));
     // userService
     //   .postDataUser(userLogin.taiKhoan)
     //   .then((res) => {

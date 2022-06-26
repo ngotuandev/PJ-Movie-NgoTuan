@@ -7,13 +7,12 @@ const { Option } = Select;
 
 export default function InfoAccount({ userLogin }) {
   const { dataAccount } = useSelector((state) => state.AccountSlice);
-  const { dataInfoUser } = useSelector((state) => state.AccountSlice);
 
   const onFinish = (values) => {
     console.log("Success:", values);
     userService
       .putDataUser(
-        { ...values, maNhom: dataInfoUser[0]?.maNhom },
+        { ...values, maNhom: dataAccount?.maNhom },
         userLogin.accessToken
       )
       .then((res) => {
@@ -53,7 +52,7 @@ export default function InfoAccount({ userLogin }) {
               label="Tài khoản"
               name="taiKhoan"
               hasFeedback
-              initialValue={dataInfoUser[0]?.taiKhoan}
+              initialValue={dataAccount?.taiKhoan}
               rules={[
                 {
                   required: true,
@@ -72,7 +71,7 @@ export default function InfoAccount({ userLogin }) {
               label="Mật khẩu"
               name="matKhau"
               hasFeedback
-              initialValue={dataInfoUser[0]?.matKhau}
+              initialValue={dataAccount?.matKhau}
               rules={[
                 {
                   required: true,
@@ -89,7 +88,7 @@ export default function InfoAccount({ userLogin }) {
               label="Họ tên"
               name="hoTen"
               hasFeedback
-              initialValue={dataInfoUser[0]?.hoTen}
+              initialValue={dataAccount?.hoTen}
               rules={[
                 {
                   required: true,
@@ -104,7 +103,7 @@ export default function InfoAccount({ userLogin }) {
               label="Email"
               name="email"
               hasFeedback
-              initialValue={dataInfoUser[0]?.email}
+              initialValue={dataAccount?.email}
               rules={[
                 {
                   required: true,
@@ -125,7 +124,7 @@ export default function InfoAccount({ userLogin }) {
               label="Số điện thoại"
               name="soDT"
               hasFeedback
-              initialValue={dataInfoUser[0]?.soDT}
+              initialValue={dataAccount?.soDT}
               rules={[
                 {
                   required: true,
@@ -140,7 +139,7 @@ export default function InfoAccount({ userLogin }) {
               className="w-full"
               name="maLoaiNguoiDung"
               label="Mã loại người dùng"
-              initialValue={dataInfoUser[0]?.maLoaiNguoiDung}
+              initialValue={dataAccount?.maLoaiNguoiDung}
               rules={[
                 {
                   required: true,

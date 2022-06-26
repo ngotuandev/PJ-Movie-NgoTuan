@@ -33,9 +33,4 @@ export const userService = {
       `/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${data}`
     );
   },
-  searchDataUser: (taiKhoan) => {
-    return httpService.get(
-      `/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=${getMaNhom()}&tuKhoa=${taiKhoan}`
-    );
-  },
 };
