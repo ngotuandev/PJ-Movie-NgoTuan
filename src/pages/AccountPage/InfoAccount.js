@@ -12,7 +12,7 @@ export default function InfoAccount({ userLogin }) {
     console.log("Success:", values);
     userService
       .putDataUser(
-        { ...values, maNhom: dataAccount?.maNhom },
+        { ...values, maNhom: userLogin?.maNhom },
         userLogin.accessToken
       )
       .then((res) => {
@@ -52,7 +52,7 @@ export default function InfoAccount({ userLogin }) {
               label="Tài khoản"
               name="taiKhoan"
               hasFeedback
-              initialValue={dataAccount?.taiKhoan}
+              initialValue={userLogin?.taiKhoan}
               rules={[
                 {
                   required: true,
@@ -71,7 +71,7 @@ export default function InfoAccount({ userLogin }) {
               label="Mật khẩu"
               name="matKhau"
               hasFeedback
-              initialValue={dataAccount?.matKhau}
+              initialValue={userLogin?.matKhau}
               rules={[
                 {
                   required: true,
@@ -88,7 +88,7 @@ export default function InfoAccount({ userLogin }) {
               label="Họ tên"
               name="hoTen"
               hasFeedback
-              initialValue={dataAccount?.hoTen}
+              initialValue={userLogin?.hoTen}
               rules={[
                 {
                   required: true,
@@ -103,7 +103,7 @@ export default function InfoAccount({ userLogin }) {
               label="Email"
               name="email"
               hasFeedback
-              initialValue={dataAccount?.email}
+              initialValue={userLogin?.email}
               rules={[
                 {
                   required: true,
@@ -124,7 +124,7 @@ export default function InfoAccount({ userLogin }) {
               label="Số điện thoại"
               name="soDT"
               hasFeedback
-              initialValue={dataAccount?.soDT}
+              initialValue={userLogin?.soDT}
               rules={[
                 {
                   required: true,
@@ -139,7 +139,7 @@ export default function InfoAccount({ userLogin }) {
               className="w-full"
               name="maLoaiNguoiDung"
               label="Mã loại người dùng"
-              initialValue={dataAccount?.maLoaiNguoiDung}
+              initialValue={userLogin?.maLoaiNguoiDung}
               rules={[
                 {
                   required: true,

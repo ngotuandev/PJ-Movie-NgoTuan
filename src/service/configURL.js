@@ -54,13 +54,13 @@ httpService.interceptors.response.use(
     // Do something with response error
     storeToolkit.dispatch(setLoadingEnd());
 
-    switch (error.response.status) {
-      case 401:
-        window.location.href = "./login";
+    // switch (error.response.status) {
+    //   case 401:
+    //     window.location.href = "./login";
 
-      default:
-        break;
-    }
+    //   default:
+    //     break;
+    // }
 
     return Promise.reject(error);
   }
