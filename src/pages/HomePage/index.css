@@ -24,9 +24,7 @@
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
-  .tabs-movie-news .cinema-news > div .mr-2 {
-    margin-bottom: 25px;
-  }
+  .tabs-movie-news .cinema-news > div .mr-2,
   .tabs-movie-news .cinema-news > div ~ div > div:nth-child(1),
   .tabs-movie-news .cinema-news > div ~ div > div:nth-child(2) {
     margin-bottom: 25px;
@@ -48,12 +46,11 @@
     margin-top: 0 !important;
     margin-bottom: 3rem;
   }
-  #infoApp > div > div > div > div:nth-child(1) > div:nth-child(1) {
-    text-align: center;
-  }
+  #infoApp > div > div > div > div:nth-child(1) > div:nth-child(1),
   #infoApp > div > div > div > div:nth-child(1) p {
     text-align: center;
   }
+
   #infoApp > div > div > div > div:nth-child(1) > div:nth-child(3) {
     display: flex;
     justify-content: center;
@@ -61,9 +58,7 @@
 }
 
 @media (max-width: 790px) {
-  .home__search-movie {
-    max-width: 640px !important;
-  }
+  .home__search-movie,
   .carousel-movie-list {
     max-width: 640px !important;
   }
@@ -81,9 +76,7 @@
 }
 
 @media (max-width: 680px) {
-  .home__search-movie {
-    max-width: 420px !important;
-  }
+  .home__search-movie,
   .carousel-movie-list {
     max-width: 420px !important;
   }
@@ -126,17 +119,12 @@
     padding-top: 7rem !important;
     margin-bottom: 2rem;
   }
-  .home__search-movie {
-    max-width: 360px !important;
-  }
-  .carousel-movie-list {
-    max-width: 360px !important;
-  }
-  .tabs-movie-news {
-    max-width: 360px !important;
-  }
+  .home__search-movie,
+  .carousel-movie-list,
+  .tabs-movie-news,
   #infoApp > div > div,
-  #infoApp > div > div > div > div:nth-child(1) {
+  #infoApp > div > div > div > div:nth-child(1),
+  .footer-home > div {
     max-width: 360px !important;
   }
 }
