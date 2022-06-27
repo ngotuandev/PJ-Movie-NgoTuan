@@ -33,7 +33,7 @@ export default function CarouselListMovie() {
   const renderDataMovie = () => {
     return dataMovie?.map((item, index) => {
       return (
-        <Carousel.Item key={index} interval={70000}>
+        <Carousel.Item key={index} interval={7000}>
           <div className="grid grid-cols-4 gap-y-8 gap-x-6 carousel-movie-grid">
             {item.map((item, index) => {
               return <ItemListMovie key={index} item={item} />;
