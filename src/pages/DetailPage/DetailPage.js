@@ -33,7 +33,7 @@ export default function DetailPage() {
     return dataDetailPage?.map((item, index) => {
       return (
         <div key={index} className="grid mt-28 grid-cols-4 w-full">
-          <div className="relative img-movie" style={{ width: "84%" }}>
+          <div className="relative w-full img-movie ">
             <div className="w-full h-full absolute flex justify-center items-center">
               <button
                 className="btn-icon-play w-16 opacity-0 duration-500 z-10"
@@ -43,7 +43,7 @@ export default function DetailPage() {
               </button>
             </div>
             <img
-              className="w-56 h-96 rounded"
+              className="w-64 h-96 rounded"
               src={item.hinhAnh}
               alt={item.hinhAnh}
             />

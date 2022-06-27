@@ -66,3 +66,10 @@
   transform: scale3d(1, 1, 1);
   opacity: 1;
 }
+
+@media (max-width: 600) {
+  .card-movie-list .btn-icon-play {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
