@@ -85,6 +85,16 @@
 
 @media (max-width: 600px) {
   .tabs-movie-news .ant-tabs-nav-list .ant-tabs-tab {
-    width: 125px !important;
+    width: 85px !important;
+  }
+  .tabs-movie-news .ant-tabs-tab > div > div {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .tabs-movie-news .ant-tabs-tab:hover div {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
   }
 }
