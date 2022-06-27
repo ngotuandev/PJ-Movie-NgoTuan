@@ -33,7 +33,11 @@ export default function SearchMovie() {
   return (
     <div>
       <AutoComplete
-        className="w-full text-red-600 search-movie border-red-300 "
+        style={{
+          boxShadow:
+            "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+        }}
+        className="w-full text-red-600 search-movie border-red-300 rounded-md"
         placeholder="Tìm kiếm phim"
         allowClear
         value={valueSearch}

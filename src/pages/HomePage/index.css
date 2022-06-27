@@ -151,13 +151,18 @@
     padding-top: 7rem !important;
     margin-bottom: 2rem;
   }
-  .home__search-movie,
-  .carousel-movie-list,
+
   .tabs-movie-news,
   #infoApp > div > div,
   #infoApp > div > div > div > div:nth-child(1),
   .footer-home > div {
     max-width: 360px !important;
+  }
+
+  .home__search-movie,
+  .carousel-movie-list {
+    max-width: 360px !important;
+    padding: 0 10px;
   }
 
   /* css video youtube in carousel list movie */
