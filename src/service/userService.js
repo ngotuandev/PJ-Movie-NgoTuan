@@ -1,15 +1,5 @@
-import axios from "axios";
-import { BASE_URL, httpService, TOKEN_CYBERSOFT } from "./configURL";
+import { httpService } from "./configURL";
 import { USER } from "./localStoreService";
-
-let getMaNhom = () => {
-  let jsonData = localStorage.getItem(USER);
-  if (jsonData) {
-    return JSON.parse(jsonData).maNhom;
-  } else {
-    return null;
-  }
-};
 
 export const userService = {
   dangNhap: (dataLogin) => {
@@ -24,8 +14,12 @@ export const userService = {
       data
     );
   },
-  postDataUser: (data) => {
-    return httpService.post("/api/QuanLyNguoiDung/ThongTinTaiKhoan", data);
+  postDataUser: (data, accessToken) => {
+    return httpService.post("/api/QuanLyNguoiDung/ThongTinTaiKhoan", data, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
   },
 
   deleteUser: (data) => {

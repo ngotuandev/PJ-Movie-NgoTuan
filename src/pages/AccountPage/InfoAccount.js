@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form, Input, message, Select } from "antd";
 import { userService } from "../../service/userService";
 import { useSelector } from "react-redux";
 
 const { Option } = Select;
 
-export default function InfoAccount({ userLogin }) {
+export default function InfoAccount({ userLogin, dataLogin }) {
   const { dataAccount } = useSelector((state) => state.AccountSlice);
 
   const onFinish = (values) => {
     console.log("Success:", values);
     userService
       .putDataUser(
-        { ...values, maNhom: userLogin?.maNhom },
+        { ...values, maNhom: dataAccount?.maNhom },
         userLogin.accessToken
       )
       .then((res) => {
@@ -52,7 +52,7 @@ export default function InfoAccount({ userLogin }) {
               label="Tài khoản"
               name="taiKhoan"
               hasFeedback
-              initialValue={userLogin?.taiKhoan}
+              initialValue={dataAccount?.taiKhoan || userLogin.taiKhoan}
               rules={[
                 {
                   required: true,
@@ -71,7 +71,7 @@ export default function InfoAccount({ userLogin }) {
               label="Mật khẩu"
               name="matKhau"
               hasFeedback
-              initialValue={userLogin?.matKhau}
+              initialValue={dataAccount?.matKhau || dataLogin.matKhau}
               rules={[
                 {
                   required: true,
@@ -88,7 +88,7 @@ export default function InfoAccount({ userLogin }) {
               label="Họ tên"
               name="hoTen"
               hasFeedback
-              initialValue={userLogin?.hoTen}
+              initialValue={dataAccount?.hoTen || userLogin.hoTen}
               rules={[
                 {
                   required: true,
@@ -103,7 +103,7 @@ export default function InfoAccount({ userLogin }) {
               label="Email"
               name="email"
               hasFeedback
-              initialValue={userLogin?.email}
+              initialValue={dataAccount?.email || userLogin.email}
               rules={[
                 {
                   required: true,
@@ -124,7 +124,7 @@ export default function InfoAccount({ userLogin }) {
               label="Số điện thoại"
               name="soDT"
               hasFeedback
-              initialValue={userLogin?.soDT}
+              initialValue={dataAccount?.soDT || userLogin.soDT}
               rules={[
                 {
                   required: true,
@@ -139,7 +139,9 @@ export default function InfoAccount({ userLogin }) {
               className="w-full"
               name="maLoaiNguoiDung"
               label="Mã loại người dùng"
-              initialValue={userLogin?.maLoaiNguoiDung}
+              initialValue={
+                dataAccount?.maLoaiNguoiDung || userLogin.maLoaiNguoiDung
+              }
               rules={[
                 {
                   required: true,

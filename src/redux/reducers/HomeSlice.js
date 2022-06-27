@@ -3,6 +3,7 @@ import { localStoreService } from "../../service/localStoreService";
 import { getId } from "../../utils/serviceUtil";
 
 const initialState = {
+  dataLogin: localStoreService.getRememberUser(),
   userLogin: localStoreService.getUserLocal(),
   carouselBanner: [],
   dataMovieList: [],
@@ -15,6 +16,9 @@ const HomeSlice = createSlice({
   name: "HomeSlice",
   initialState,
   reducers: {
+    setDataLogin: (state, { payload }) => {
+      state.dataLogin = payload;
+    },
     setUserLogin: (state, { payload }) => {
       state.userLogin = payload;
     },
@@ -84,6 +88,7 @@ const HomeSlice = createSlice({
 });
 
 export const {
+  setDataLogin,
   setUserLogin,
   addVidBanner,
   getDataMovieList,

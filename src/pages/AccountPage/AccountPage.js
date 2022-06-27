@@ -5,26 +5,21 @@ import { userService } from "../../service/userService";
 import { useDispatch, useSelector } from "react-redux";
 import TicketHistory from "./TicketHistory";
 import "./index.css";
-import {
-  getDataTicketHistoryService,
-  getDataTicketHistory,
-  getDataAccountUser,
-} from "../../redux/reducers/AccountSlice";
+import { getDataTicketHistory } from "../../redux/reducers/AccountSlice";
 
 export default function AccountPage() {
   const { userLogin } = useSelector((state) => state.HomeSlice);
+  const { dataLogin } = useSelector((state) => state.HomeSlice);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getDataTicketHistoryService(userLogin.taiKhoan));
-
-    // userService
-    //   .postDataUser(userLogin.taiKhoan)
-    //   .then((res) => {
-    //     dispatch(getDataTicketHistory(res.data.content));
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    userService
+      .postDataUser(userLogin.taiKhoan, userLogin.accessToken)
+      .then((res) => {
+        dispatch(getDataTicketHistory(res.data.content));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -49,7 +44,7 @@ export default function AccountPage() {
                 filter: "drop-shadow(0 0 .75rem rgb(248 113 113))",
               }}
             >
-              <InfoAccount userLogin={userLogin} />
+              <InfoAccount userLogin={userLogin} dataLogin={dataLogin} />
             </div>
             <div
               className="my-5 w-full h-96 px-3 py-2 rounded-lg bg-white overflow-y-scroll"

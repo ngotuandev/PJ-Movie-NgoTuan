@@ -5,13 +5,15 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { localStoreService } from "../../../service/localStoreService";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { setUserLogin } from "../../../redux/reducers/HomeSlice";
+import { setDataLogin, setUserLogin } from "../../../redux/reducers/HomeSlice";
 
 export default function FormLogin() {
   let history = useHistory();
   const dispatch = useDispatch();
 
   const onFinish = (values) => {
+    localStoreService.setRememberUser(values);
+    dispatch(setDataLogin(values));
     userService
       .dangNhap(values)
       .then((res) => {

@@ -15,7 +15,6 @@ import { getDataCinemaList } from "../../redux/reducers/HomeSlice";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     movieService
       .getCinemaList()
