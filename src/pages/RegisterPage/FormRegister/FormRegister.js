@@ -9,7 +9,6 @@ export default function FormDangKi() {
 
   const onFinish = (values) => {
     let dataRegister = { ...values, maNhom: "GP01" };
-    console.log(dataRegister);
     userService
       .dangKy(dataRegister)
       .then((res) => {

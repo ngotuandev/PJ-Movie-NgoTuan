@@ -19,7 +19,7 @@ export default function FormLogin() {
       .then((res) => {
         localStoreService.setUserLocal(res.data.content);
         dispatch(setUserLogin(res.data.content));
-        history.push("/");
+        window.location.href = "/";
 
         // //*Thay thế url và tải lại trang
         // window.location.href = "/";
