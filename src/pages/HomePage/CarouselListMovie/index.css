@@ -1,8 +1,10 @@
+.card-movie-list:hover .btn-buy-ticket {
+  display: block;
+}
+
 .card-movie-list:hover .btn-icon-play,
-.card-movie-list:hover .btn-buy-ticket,
 .card-movie-list:hover .overlay-img {
   opacity: 1 !important;
-  display: block;
 }
 
 .card-movie-list:hover .card-movie-title {

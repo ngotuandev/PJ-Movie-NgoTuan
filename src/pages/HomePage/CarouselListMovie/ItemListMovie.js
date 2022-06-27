@@ -14,8 +14,16 @@ function ItemListMovie({ item }) {
     <div className="card-movie-list cursor-pointer">
       <div className="relative">
         <div className="relative" style={{ width: "100%", height: "100%" }}>
+          <div className="w-full h-full flex justify-center items-center absolute ">
+            <button
+              className="btn-icon-play opacity-0 duration-500 z-10"
+              onClick={() => openModal()}
+            >
+              <img src={play} alt={play} />
+            </button>
+          </div>
           <img
-            className="m-auto rounded-md object-fill"
+            className="m-auto rounded object-fill"
             style={{ width: "269px", height: "350px" }}
             src={item.hinhAnh}
             alt={item.hinhAnh}
@@ -32,13 +40,6 @@ function ItemListMovie({ item }) {
               }}
             ></div>
           </NavLink>
-          <button
-            className="btn-icon-play w-16 opacity-0 outline-none absolute duration-500"
-            style={{ zIndex: "2", top: "40%", right: "38%" }}
-            onClick={() => openModal()}
-          >
-            <img src={play} alt={play} />
-          </button>
         </div>
 
         {modal ? (

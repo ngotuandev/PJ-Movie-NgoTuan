@@ -33,19 +33,21 @@ export default function DetailPage() {
     return dataDetailPage?.map((item, index) => {
       return (
         <div key={index} className="grid mt-28 grid-cols-4 w-full">
-          <div className="relative img-movie">
+          <div className="relative img-movie" style={{ width: "84%" }}>
+            <div className="w-full h-full absolute flex justify-center items-center">
+              <button
+                className="btn-icon-play w-16 opacity-0 duration-500 z-10"
+                onClick={() => openModal()}
+              >
+                <img src={play} alt={play} />
+              </button>
+            </div>
             <img
               className="w-56 h-96 rounded"
               src={item.hinhAnh}
               alt={item.hinhAnh}
             />
-            <button
-              className="btn-icon-play w-16 opacity-0 outline-none absolute duration-500"
-              style={{ zIndex: "2", top: "41.5%", right: "45%" }}
-              onClick={() => openModal()}
-            >
-              <img src={play} alt={play} />
-            </button>
+
             {modal ? (
               <section className="modal__bg" onClick={() => setModal(false)}>
                 <div className="modal__align">
