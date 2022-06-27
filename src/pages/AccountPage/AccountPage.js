@@ -10,10 +10,11 @@ import { getDataTicketHistory } from "../../redux/reducers/AccountSlice";
 export default function AccountPage() {
   const { userLogin } = useSelector((state) => state.HomeSlice);
   const { dataLogin } = useSelector((state) => state.HomeSlice);
+  const { dataAccount } = useSelector((state) => state.AccountSlice);
   const dispatch = useDispatch();
   useEffect(() => {
     userService
-      .postDataUser(userLogin.taiKhoan, userLogin.accessToken)
+      .postDataUser(userLogin.accessToken)
       .then((res) => {
         dispatch(getDataTicketHistory(res.data.content));
       })
@@ -44,7 +45,11 @@ export default function AccountPage() {
                 filter: "drop-shadow(0 0 .75rem rgb(248 113 113))",
               }}
             >
-              <InfoAccount userLogin={userLogin} dataLogin={dataLogin} />
+              <InfoAccount
+                userLogin={userLogin}
+                dataLogin={dataLogin}
+                dataAccount={dataAccount}
+              />
             </div>
             <div
               className="my-5 w-full h-96 px-3 py-2 rounded-lg bg-white overflow-y-scroll"

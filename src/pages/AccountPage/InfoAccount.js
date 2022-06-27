@@ -1,13 +1,10 @@
 import React from "react";
 import { Form, Input, message, Select } from "antd";
 import { userService } from "../../service/userService";
-import { useSelector } from "react-redux";
 
 const { Option } = Select;
 
-export default function InfoAccount({ userLogin, dataLogin }) {
-  const { dataAccount } = useSelector((state) => state.AccountSlice);
-
+export default function InfoAccount({ userLogin, dataLogin, dataAccount }) {
   const onFinish = (values) => {
     console.log("Success:", values);
     userService

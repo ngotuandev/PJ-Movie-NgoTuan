@@ -8,6 +8,21 @@
   .carousel-movie-list .btn-icon-play {
     right: 30% !important;
   }
+  /* css video youtube in carousel list movie*/
+
+  .modal__video-align {
+    width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal__content {
+    margin: 0 !important;
+  }
+
+  .modal__content > svg:nth-child(1) {
+    left: 99% !important;
+  }
 }
 
 @media (max-width: 960px) {
@@ -54,6 +69,14 @@
   #infoApp > div > div > div > div:nth-child(1) > div:nth-child(3) {
     display: flex;
     justify-content: center;
+  }
+  /* css video youtube in carousel list movie */
+
+  .modal__video-align,
+  .modal__content,
+  .modal__video-align > iframe {
+    width: 550px;
+    height: 450px;
   }
 }
 
@@ -112,6 +135,15 @@
   .card-movie-title > div ~ p {
     -webkit-line-clamp: 4 !important;
   }
+
+  /* css video youtube in carousel list movie */
+
+  .modal__video-align,
+  .modal__content,
+  .modal__video-align > iframe {
+    width: 400px;
+    height: 350px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -126,5 +158,14 @@
   #infoApp > div > div > div > div:nth-child(1),
   .footer-home > div {
     max-width: 360px !important;
+  }
+
+  /* css video youtube in carousel list movie */
+
+  .modal__video-align,
+  .modal__content,
+  .modal__video-align > iframe {
+    width: 300px;
+    height: 250px;
   }
 }

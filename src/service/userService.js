@@ -14,8 +14,8 @@ export const userService = {
       data
     );
   },
-  postDataUser: (data, accessToken) => {
-    return httpService.post("/api/QuanLyNguoiDung/ThongTinTaiKhoan", data, {
+  postDataUser: (accessToken) => {
+    return httpService.post("/api/QuanLyNguoiDung/ThongTinTaiKhoan", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

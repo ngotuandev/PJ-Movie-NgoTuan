@@ -16,7 +16,7 @@ export default function DangNhapPage() {
   return (
     <>
       <div
-        className="flex justify-center items-center"
+        className="flex justify-center items-center pt-20"
         style={{
           backgroundImage: `url(${background})`,
           minHeight: "100vh",
