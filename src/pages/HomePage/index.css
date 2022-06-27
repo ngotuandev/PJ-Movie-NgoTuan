@@ -114,7 +114,7 @@
   }
   .card-movie-list > div {
     width: 100%;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .card-movie-list > div ~ .mt-2 {
     margin: 0 !important;
