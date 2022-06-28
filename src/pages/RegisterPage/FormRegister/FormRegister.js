@@ -63,6 +63,7 @@ export default function FormDangKi() {
             {
               required: true,
               message: "Tài khoản không được bỏ trống!",
+              whitespace: true,
             },
           ]}
         >
@@ -77,6 +78,7 @@ export default function FormDangKi() {
               required: true,
               message: "Mật khẩu không được bỏ trống!",
             },
+            { len: 6, message: "Mật khẩu phải từ 6 chữ số" },
           ]}
         >
           <Input.Password />

@@ -56,8 +56,15 @@ export default function TabsCheck({ dataPurchase }) {
       }}
     >
       <div className="w-full h-full flex justify-center items-center">
-        <div className=" bg-white rounded-lg px-4 py-3 w-auto h-auto">
-          <Tabs activeKey={`${valueActiveKey}`} tabPosition="top">
+        <div
+          className=" bg-white rounded-lg pl-2.5 py-3 h-auto"
+          style={{ width: "340px" }}
+        >
+          <Tabs
+            activeKey={`${valueActiveKey}`}
+            tabPosition="top"
+            className="w-80"
+          >
             <TabPane
               key={1}
               tab={
@@ -69,8 +76,8 @@ export default function TabsCheck({ dataPurchase }) {
               }
             >
               <div
-                style={{ width: "25vw" }}
-                className="p-6 m-auto bg-white rounded"
+                style={{ width: "300px" }}
+                className=" p-4 m-auto bg-white rounded "
               >
                 <div className="flex flex-col items-center place-content-around mb-5">
                   <svg
@@ -151,8 +158,8 @@ export default function TabsCheck({ dataPurchase }) {
               }
             >
               <div
-                style={{ width: "25vw" }}
-                className="p-6 m-auto bg-white rounded"
+                style={{ width: "300px" }}
+                className="p-4 m-auto bg-white rounded"
               >
                 <div className="flex flex-col items-center place-content-around">
                   <svg
@@ -185,6 +192,7 @@ export default function TabsCheck({ dataPurchase }) {
                       {
                         required: true,
                         message: "Tài khoản không được bỏ trống!",
+                        whitespace: true,
                       },
                     ]}
                   >
@@ -199,6 +207,7 @@ export default function TabsCheck({ dataPurchase }) {
                         required: true,
                         message: "Mật khẩu không được bỏ trống!",
                       },
+                      { len: 6, message: "Mật khẩu phải từ 6 chữ số" },
                     ]}
                   >
                     <Input.Password />
@@ -231,6 +240,19 @@ export default function TabsCheck({ dataPurchase }) {
                     ]}
                   >
                     <Input />
+                  </Form.Item>
+                  <Form.Item
+                    label="Số điện thoại"
+                    name="soDT"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Số điện thoại không được bỏ trống",
+                      },
+                      { len: 10, message: "Số điện thoại tối đa 10 số" },
+                    ]}
+                  >
+                    <Input type="number" />
                   </Form.Item>
                   <Form.Item>
                     <button className="rounded px-7 py-2 bg-red-500 uppercase text-sm font-medium text-white w-full">
