@@ -74,6 +74,9 @@
     width: 550px;
     height: 450px;
   }
+  .carousel-movie-list .carousel-indicators {
+    bottom: -7%;
+  }
 }
 
 @media (max-width: 790px) {
@@ -168,5 +171,8 @@
   .modal__video-align > iframe {
     width: 300px;
     height: 250px;
+  }
+  .carousel-movie-list .carousel-indicators {
+    display: none;
   }
 }

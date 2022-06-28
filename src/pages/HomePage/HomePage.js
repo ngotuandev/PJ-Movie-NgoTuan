@@ -69,15 +69,15 @@ export default function HomePage() {
         >
           <CarouselListMovie />
         </div>
-        <div
-          className="py-12 mx-auto tabs-cinema-list"
-          style={{ maxWidth: "1100px" }}
-          id="cinemaList"
-        >
-          <MediaQuery minWidth={960}>
+        <MediaQuery minWidth={960}>
+          <div
+            className="py-12 mx-auto tabs-cinema-list"
+            style={{ maxWidth: "1100px" }}
+            id="cinemaList"
+          >
             <CinemaList />
-          </MediaQuery>
-        </div>
+          </div>
+        </MediaQuery>
         <div
           className="tabs-movie-news mx-auto"
           style={{ maxWidth: "1100px", padding: "10px 20px 60px 20px" }}
