@@ -29,7 +29,11 @@ function CarouselBanner() {
   const renderBanner = () => {
     return carouselBanner?.map((item, index) => {
       return (
-        <Carousel.Item interval={6000} className="relative" key={index}>
+        <Carousel.Item
+          interval={modal ? 100000000 : 6000}
+          className="relative"
+          key={index}
+        >
           <img
             style={{ width: "100%", maxHeight: "780px" }}
             src={item.hinhAnh}
@@ -52,8 +56,8 @@ function CarouselBanner() {
                       height: "60px",
                       width: "60px",
                       position: "relative",
-                      bottom: "15%",
-                      left: "109%",
+                      bottom: "20%",
+                      left: "47%",
                       cursor: "pointer",
                     }}
                     viewBox="0 0 20 20"

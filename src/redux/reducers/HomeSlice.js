@@ -10,6 +10,7 @@ const initialState = {
   dataTabsCinema: [],
   dataMovieSchedul: [],
   dataSearchSave: [],
+  modal: false,
 };
 
 const HomeSlice = createSlice({
@@ -84,6 +85,9 @@ const HomeSlice = createSlice({
       }
       state.dataMovieList = dataNew;
     },
+    setModalNew: (state, { payload }) => {
+      state.modal = payload;
+    },
   },
 });
 
@@ -95,6 +99,7 @@ export const {
   getDataCinemaList,
   getDataMovieSchedul,
   searchDataMovieList,
+  setModalNew,
 } = HomeSlice.actions;
 
 export default HomeSlice.reducer;

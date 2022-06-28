@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import play from "../../../assets/img/play.png";
 import { NavLink } from "react-router-dom";
-import { memo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setModalNew } from "../../../redux/reducers/HomeSlice";
 
 function ItemListMovie({ item }) {
   const [modal, setModal] = useState(false);
-
-  const openModal = () => {
-    setModal(!modal);
-  };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setModalNew(modal));
+  }, [modal]);
 
   return (
     <div className="card-movie-list cursor-pointer">
@@ -17,7 +18,7 @@ function ItemListMovie({ item }) {
           <div className="w-full h-full flex justify-center items-center absolute ">
             <button
               className="btn-icon-play opacity-0 duration-500 z-10"
-              onClick={() => openModal()}
+              onClick={() => setModal(true)}
             >
               <img src={play} alt={play} />
             </button>
@@ -47,13 +48,13 @@ function ItemListMovie({ item }) {
             <div className="modal__align">
               <div className="modal__content">
                 <svg
-                  onClick={setModal}
+                  onClick={() => setModal(false)}
                   style={{
                     height: "60px",
                     width: "60px",
                     position: "relative",
-                    bottom: "15%",
-                    left: "109%",
+                    bottom: "20%",
+                    left: "47%",
                     cursor: "pointer",
                   }}
                   viewBox="0 0 20 20"
@@ -121,4 +122,4 @@ function ItemListMovie({ item }) {
   );
 }
 
-export default memo(ItemListMovie);
+export default ItemListMovie;

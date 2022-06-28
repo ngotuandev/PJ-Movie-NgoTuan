@@ -67,4 +67,7 @@
     width: 100%;
     margin-right: 10px;
   }
+  .modal__content > svg:nth-child(1) {
+    left: 40% !important;
+  }
 }

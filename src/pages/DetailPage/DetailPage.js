@@ -17,10 +17,6 @@ export default function DetailPage() {
   const dispatch = useDispatch();
   let { id } = useParams();
 
-  const openModal = () => {
-    setModal(!modal);
-  };
-
   useEffect(() => {
     let fetchMovie = async () => {
       let result = await movieService.getDataDetailMovie(id);
@@ -37,7 +33,7 @@ export default function DetailPage() {
             <div className="w-full h-full absolute flex justify-center items-center">
               <button
                 className="btn-icon-play w-16 opacity-0 duration-500 z-10"
-                onClick={() => openModal()}
+                onClick={() => setModal(true)}
               >
                 <img src={play} alt={play} />
               </button>
@@ -58,8 +54,8 @@ export default function DetailPage() {
                         height: "60px",
                         width: "60px",
                         position: "relative",
-                        bottom: "15%",
-                        left: "109%",
+                        bottom: "20%",
+                        left: "47%",
                         cursor: "pointer",
                       }}
                       viewBox="0 0 20 20"

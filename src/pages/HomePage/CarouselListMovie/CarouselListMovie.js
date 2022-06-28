@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { movieService } from "../../../service/movieService";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "react-bootstrap/Carousel";
@@ -8,6 +8,7 @@ import { getDataMovieList } from "../../../redux/reducers/HomeSlice";
 
 export default function CarouselListMovie() {
   const { dataMovieList } = useSelector((state) => state.HomeSlice);
+  const { modal } = useSelector((state) => state.HomeSlice);
   const dispatch = useDispatch();
   const dataMovie = [];
 
@@ -30,10 +31,11 @@ export default function CarouselListMovie() {
         console.log(err);
       });
   }, []);
+
   const renderDataMovie = () => {
     return dataMovie?.map((item, index) => {
       return (
-        <Carousel.Item key={index} interval={7000}>
+        <Carousel.Item key={index} interval={modal ? 100000000 : 7000}>
           <div className="grid grid-cols-4 gap-y-8 gap-x-6 carousel-movie-grid">
             {item.map((item, index) => {
               return <ItemListMovie key={index} item={item} />;

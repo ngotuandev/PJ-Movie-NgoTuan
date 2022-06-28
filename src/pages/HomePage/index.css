@@ -19,10 +19,6 @@
   .modal__content {
     margin: 0 !important;
   }
-
-  .modal__content > svg:nth-child(1) {
-    left: 99% !important;
-  }
 }
 
 @media (max-width: 960px) {

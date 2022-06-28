@@ -133,9 +133,32 @@
   .movies-purchase > div:nth-child(2) {
     width: 360px !important;
   }
+
+  .movies-purchase > div:nth-child(2) > div:nth-child(1) div {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
   .movies-purchase > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
     padding-bottom: 1rem !important ;
     font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .movies-purchase
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > div:nth-last-child(1) {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding-top: 1.5rem !important;
+  }
+  .movies-purchase
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > div:nth-last-child(3)
+    > div:nth-child(2)
+    div {
+    font-size: 1rem;
     line-height: 1.5rem;
   }
 }
